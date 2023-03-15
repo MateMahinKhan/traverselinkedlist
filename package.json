@@ -1,0 +1,40 @@
+{
+  "name": "traverselinkedlist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "ts-node --project ts-node.json node_modules/jasmine/bin/jasmine && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags",
+    "test": "ts-node --project ts-node.json node_modules/jasmine/bin/jasmine",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateMahinKhan/traverselinkedlist.git"
+  },
+  "author": "MateMahinKhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MateMahinKhan/traverselinkedlist/issues"
+  },
+  "homepage": "https://github.com/MateMahinKhan/traverselinkedlist#readme",
+  "devDependencies": {
+    "@types/jasmine": "^4.3.1",
+    "esm": "^3.2.25",
+    "jasmine": "^4.5.0",
+    "prettier": "^2.8.4",
+    "ts-node": "^10.9.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.9.5"
+  }
+}
