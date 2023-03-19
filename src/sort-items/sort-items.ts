@@ -1,6 +1,4 @@
-type WithPointers<T, TKey extends keyof T> = T & {
-  [K in TKey]: T[K];
-};
+import { Item } from '../item';
 
 export const sortByFirstToLast = <
   T extends { id: number },
@@ -32,7 +30,7 @@ export const sortByFirstToLast = <
     (item) => item[nextPointer] !== null || item[previousPointer] !== null,
   );
 
-  const sorted: WithPointers<T, TKey>[] = [];
+  const sorted: Item<T, TKey>[] = [];
   const visited = new Set();
   let current: T | undefined = updatedArr.find(
     (item) => item[previousPointer] === null,
