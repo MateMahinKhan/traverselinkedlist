@@ -1,9 +1,9 @@
-export const getItemFromList = <T extends { id: number }, TKey extends keyof T>(
+export function getItemFromList<T extends { id: number }, TKey extends keyof T>(
   items: T[],
   firstOrLast: 'first' | 'last',
   previousPointer: TKey,
   nextPointer: TKey,
-): any => {
+): T | null {
   try {
     if (items.length) {
       const allItemsAreLegacy = items.every(
@@ -31,4 +31,4 @@ export const getItemFromList = <T extends { id: number }, TKey extends keyof T>(
   } catch (error) {
     return null;
   }
-};
+}

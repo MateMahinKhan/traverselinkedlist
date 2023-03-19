@@ -1,13 +1,9 @@
 import { Item } from '../item';
 
-export const sortByFirstToLast = <
+export function sortByFirstToLast<
   T extends { id: number },
   TKey extends keyof T,
->(
-  arr: T[],
-  previousPointer: TKey,
-  nextPointer: TKey,
-) => {
+>(arr: T[], previousPointer: TKey, nextPointer: TKey): T[] {
   if (!Array.isArray(arr)) {
     throw new Error('Input must be an array');
   }
@@ -56,4 +52,4 @@ export const sortByFirstToLast = <
   const unsortedObjects = arr.filter((item) => !sortedNLegacy.includes(item));
 
   return [...sortedNLegacy, ...unsortedObjects];
-};
+}
