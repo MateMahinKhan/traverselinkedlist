@@ -56,9 +56,9 @@ describe('getFirstItem', () => {
     expect(firstItem?.previous).toBeNull();
   });
 
-  it('should return null if there are no ideas', () => {
+  it('should return null if there are no items', () => {
     const items = [];
-    const result = getFirstItem(items, 'previous_idea', 'next_idea');
+    const result = getFirstItem(items, 'previous', 'next');
     expect(result).toBeNull();
   });
 });
