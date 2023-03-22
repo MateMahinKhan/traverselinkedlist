@@ -31,6 +31,8 @@ jobs:
       - run: npm ci
       - run: git config --global user.name "GitHub Actions"
       - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - run: npm run format
+      - run: git add -A
       - run: npm version patch -m "Bump version to %s [skip ci]"
       - run: git push --follow-tags
       - run: npm publish

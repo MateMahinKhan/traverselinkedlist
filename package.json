@@ -6,10 +6,7 @@
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
-    "prepublishOnly": "ts-node --project ts-node.json node_modules/jasmine/bin/jasmine && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run lint",
     "test": "ts-node --project ts-node.json node_modules/jasmine/bin/jasmine",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json"
