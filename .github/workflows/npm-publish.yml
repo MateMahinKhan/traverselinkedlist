@@ -29,6 +29,10 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: git config --global user.name "GitHub Actions"
+      - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - run: npm version patch -m "Bump version to %s [skip ci]"
+      - run: git push --follow-tags
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTO_AUTH_TOKEN}}
