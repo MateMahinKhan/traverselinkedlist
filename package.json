@@ -1,6 +1,6 @@
 {
   "name": "traverselinkedlist",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "types": "lib/index.d.ts",
