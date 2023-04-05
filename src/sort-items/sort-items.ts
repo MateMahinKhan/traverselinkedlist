@@ -42,7 +42,9 @@ export function sortByFirstToLast<
 
     current = updatedArr.find((item) => {
       if (current) {
-        return item.id === current[nextPointer];
+        return (
+          item.id === (current[nextPointer as keyof T] as unknown as number)
+        );
       }
     });
   }
